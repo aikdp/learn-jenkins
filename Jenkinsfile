@@ -17,4 +17,15 @@ pipeline {
             }
         }
     }
+    post { 
+        always { 
+            echo 'This section runs always'
+        }
+        success { 
+            echo 'This section runs when pipeline success'
+        }
+        failure { 
+            echo 'This section runs when pipeline failure'
+        }
+    }
 }
