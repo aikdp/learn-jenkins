@@ -4,6 +4,8 @@ pipeline {
     }
       options {
         timeout(time: 10, unit: 'SECONDS')  //this pipeline should complete 10 sec, if npot automatically fails  
+        disableConcurrentBuilds()
+        retry(2)
     }
     stages {
         stage('Build') {
