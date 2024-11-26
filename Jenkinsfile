@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                branch 'production'
+                branch 'production'     //if this condition true, this stage will run, else skipped.
             }
             steps {
                 sh 'echo this is deploy'
