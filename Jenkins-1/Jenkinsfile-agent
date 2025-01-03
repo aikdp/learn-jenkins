@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'echo this is DEPLOY'
-                error "piple failed"
+                // error "piple failed"
             }
         }
     }
