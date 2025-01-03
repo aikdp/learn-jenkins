@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    stages{
+        stage('Build'){
+            steps{
+                sh 'echo I am from BUILD stage'
+            }
+        }
+        stage('Test'){
+            stpes{
+                sh 'echo i am from TEST stage'
+            }
+        }
+        stage('Deploy'){
+            stpes{
+                sh 'echo I am from DEPLOY stage'
+            }
+        }
+    }
+    post{
+        always{
+            echo "this is always running"
+        }
+        success{
+            echo "this SUCESS stage. Pipeline is SUCCESS"
+        }
+        failure{
+            echo "This Section run when error. Pipeline is FAIL"
+        }
+    }
+}

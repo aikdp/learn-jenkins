@@ -1,0 +1,41 @@
+pipeline {
+    agent{
+        label 'AGENT-1'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                sh 'echo this is BUILD'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                sh 'echo this is TEST'
+               
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                sh 'echo this is DEPLOY'
+                error "piple failed"
+            }
+        }
+    }
+    post {
+        always{
+            echo "This is ALWAYS section, always say hello"
+        }
+
+        success{
+            echo "This section print when pipeline is success, I am SUCCESS"
+        }
+
+        failure{
+            echo "this section failed when pipeline is FAILED. I am FAIL"
+        }
+    }
+}
