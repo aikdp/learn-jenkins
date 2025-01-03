@@ -12,13 +12,14 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh 'echo this is TEST'
-                error "piple failed"
+               
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
                 sh 'echo this is DEPLOY'
+                error "piple failed"
             }
         }
     }
