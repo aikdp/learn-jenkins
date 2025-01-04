@@ -32,8 +32,8 @@ pipeline {
         }
         stage('Deploy') {
             when {          //added when condition ,our brnach is--origin/main. SO skip this stage
-                branch 'production'
-                // expression { GIT_BRANCH == 'origin/main'}
+                // branch 'production'
+                expression { GIT_BRANCH == 'origin/main'}
             }
             steps {
                 sh 'echo this is deploy'
